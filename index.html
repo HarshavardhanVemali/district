@@ -3,18 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NR Academy | Academic Excellence Since 2019</title>
+    <title>District</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
@@ -31,6 +24,7 @@
     font-family: var(--bs-body-font-family), sans-serif;
     font-weight: 600 !important;
     line-height: 1.4;
+    font-family: 'Ubuntu', sans-serif;
   }
 body {
     font-family: 'Arial', sans-serif;
@@ -136,6 +130,8 @@ nav .container {
 .menu-toggle i {
     font-size: 1.5em;
     color: #f05454; 
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 #home {
@@ -185,6 +181,10 @@ nav .container {
 /* About Section Styling */
 #about {
     text-align: center;
+    padding-top: 20px;
+}
+#about h2{
+    margin-bottom: 0px;
 }
 
 .about-content {
@@ -218,19 +218,25 @@ nav .container {
     padding: 40px 0;
     text-align: center;
 }
-
+#schemesdetails h2{
+    margin: 0;
+}
 .scheme-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     grid-gap: 30px;
+    padding: 20px 0px;
 }
 
 .scheme {
+    border: 1px solid #dddddd;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease; 
+    text-align: initial;
+    word-spacing: 1px;
 }
 
 .scheme:hover {
@@ -246,13 +252,18 @@ nav .container {
 }
 
 .scheme h3 {
+    text-align: center;
+    color: #FF6600;
+    letter-spacing: 1px;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
 .scheme p {
-    font-size: 14px;
-    color: #555;
+    font-size: 15px;
+    color: #333333;
+    font-weight: 100 !important;
 }
 
 #results {
@@ -306,7 +317,6 @@ nav .container {
 }
 
 footer {
-    background-color: #333;
     color: white;
     text-align: center;
     padding: 3px 0;
@@ -338,12 +348,15 @@ footer {
 }
 
 #contact {
+    padding-top: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     background-color: #f9f9f9;
+    background-image: url('images/bacground.jpg');
+    background-size: cover;
 }
 
 #contact h2 {
-    color: #f05454; 
+    color: #fff; 
     font-size: 2.5em; 
     margin-bottom: 20px;
     text-align: center;
@@ -365,6 +378,7 @@ footer p{
     margin-bottom: 20px; 
     text-align: left; 
     text-decoration: underline;
+    color: #fff;
 }
 
 .contact-form textarea {
@@ -385,6 +399,7 @@ footer p{
 .contact-details li {
     margin-bottom: 15px;
     text-align: left;
+    color: #fff;
 }
 
 .contact-details i {
@@ -407,9 +422,12 @@ footer p{
 }
 
 .map-container h3 {
-    color: #333; 
+    color: #fff; 
     font-size: 1.8em; 
     margin-bottom: 10px; 
+}
+.about-content{
+    padding: 20px 0px;
 }
 .about-content p{
     text-align: left;
@@ -430,7 +448,7 @@ footer p{
         display: none;
         flex-direction: column;
         position: absolute; 
-        top: 85px; 
+        top: 115px; 
         left: 100px;
         width: 100%; 
         background-color: #fff; 
@@ -458,9 +476,10 @@ footer p{
     .hero-content h1 {
         font-size: 3em; 
     }
-
-    .about-content, 
-    .contact-content {
+    .about-content{
+        padding: 5px 0;
+    }
+    .about-content{
         flex-direction: column;
     }
 
@@ -473,7 +492,11 @@ footer p{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 0px;
+        margin-bottom: 10px;
+    }
+    .scheme-grid{
+        padding: 20px 0;
     }
     .hours{
         width: 100%;
@@ -523,7 +546,7 @@ footer p{
     max-height: 400px;
     }
     #courses ,#schemesdetails{
-        padding: 40px 0;
+        padding: 20px 0;
         text-align: center;
     }
     .carousel-inner .carousel-item img {
@@ -535,6 +558,19 @@ footer p{
    .about-image{
     margin: 0px 10px;
    }
+   #contact h2 {
+        text-align: left;
+    }
+    .contact-details h3 {
+        font-size: 0.9em;
+        
+    }
+    .contact-content{
+        margin-bottom: 0px;
+    }
+    .map-container{
+        margin-top: 0px !important;
+    }
     
 }
 #home {
@@ -663,7 +699,26 @@ footer p{
         </section>
         <section id="about">
                 <div class="container">
-                    <h2 data-aos="fade-up">About</h2>
+                    <h2 data-aos="fade-up">ABOUT</h2>
+                    <svg height="20" viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Left line -->
+                        <line x1="0" y1="15" x2="100" y2="15" stroke="#D4A647" stroke-width="2"/>
+                      
+                        <!-- Left diamond (hollow) -->
+                        <polygon points="100,15 110,10 120,15 110,20" fill="none" stroke="#D4A647" stroke-width="2"/>
+                      
+                        <!-- Middle diamond (larger and filled) -->
+                        <polygon points="120,15 140,5 160,15 140,25" fill="#D4A647" />
+                      
+                        <!-- Right diamond (hollow) -->
+                        <polygon points="160,15 170,10 180,15 170,20" fill="none" stroke="#D4A647" stroke-width="2"/>
+                      
+                        <!-- Right line -->
+                        <line x1="180" y1="15" x2="280" y2="15" stroke="#D4A647" stroke-width="2"/>
+                      </svg>
+                      
+                      
+                      
                     <div class="about-content">
                         <div class="about-image" data-aos="fade-right" data-aos-duration="1000"
                         data-aos-delay="200">
@@ -687,29 +742,50 @@ footer p{
         <section id="schemesdetails" class="bg-light"> 
             <div class="container">
                 <h2 data-aos="fade-up">Schemes Details</h2>
+                <svg height="20" viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Left line -->
+                    <line x1="0" y1="15" x2="100" y2="15" stroke="#D4A647" stroke-width="2"/>
+                  
+                    <!-- Left diamond (hollow) -->
+                    <polygon points="100,15 110,10 120,15 110,20" fill="none" stroke="#D4A647" stroke-width="2"/>
+                  
+                    <!-- Middle diamond (larger and filled) -->
+                    <polygon points="120,15 140,5 160,15 140,25" fill="#D4A647" />
+                  
+                    <!-- Right diamond (hollow) -->
+                    <polygon points="160,15 170,10 180,15 170,20" fill="none" stroke="#D4A647" stroke-width="2"/>
+                  
+                    <!-- Right line -->
+                    <line x1="180" y1="15" x2="280" y2="15" stroke="#D4A647" stroke-width="2"/>
+                  </svg>
                 <div class="scheme-grid">
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">
+                        <h3>TITLE</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
                         
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">
+                        <h3>TITLE</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
                        
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">
+                        <h3>TITLE</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
                         
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">
+                        <h3>TITLE</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
                        
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up"data-aos-duration="1000"
                     data-aos-delay="200">
+                        <h3>TITLE</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
                         
                     </div>
@@ -719,7 +795,25 @@ footer p{
     
         <section id="pst" class="bg-light"> 
             <div class="container">
-                <h2 data-aos="fade-up">PST Details</h2>
+                <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+                    <h2 data-aos="fade-up">PST Details</h2>
+                    <svg  height="20" viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Left line -->
+                        <line x1="0" y1="15" x2="100" y2="15" stroke="#D4A647" stroke-width="2"/>
+                    
+                        <!-- Left diamond (hollow) -->
+                        <polygon points="100,15 110,10 120,15 110,20" fill="none" stroke="#D4A647" stroke-width="2"/>
+                    
+                        <!-- Middle diamond (larger and filled) -->
+                        <polygon points="120,15 140,5 160,15 140,25" fill="#D4A647" />
+                    
+                        <!-- Right diamond (hollow) -->
+                        <polygon points="160,15 170,10 180,15 170,20" fill="none" stroke="#D4A647" stroke-width="2"/>
+                    
+                        <!-- Right line -->
+                        <line x1="180" y1="15" x2="280" y2="15" stroke="#D4A647" stroke-width="2"/>
+                    </svg>
+                </div>
                 <div class="scheme-grid">
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">
@@ -770,13 +864,14 @@ footer p{
                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
+            <footer>
+                <div class="container">
+                    <p>© 2025 District. All Rights Reserved. </p>
+                </div>
+            </footer>
         </section>
     
-        <footer>
-            <div class="container">
-                <p>© 2023 NR Academy. All Rights Reserved. </p>
-            </div>
-        </footer>
+        
     </main>
 
 
