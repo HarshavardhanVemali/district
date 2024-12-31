@@ -69,7 +69,7 @@ p {
 }
 
 nav {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 3px 0;
     position: fixed;
     top: 0;
@@ -129,7 +129,7 @@ nav .container {
 
 .menu-toggle i {
     font-size: 1.5em;
-    color: #f05454; 
+    color: #edb542; 
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -247,23 +247,23 @@ nav .container {
 
 .scheme img {
     width: 100%;
-    height: 200px; 
+    height: 300px; 
     object-fit: cover;
     border-radius: 8px; 
     margin-bottom: 15px;
 }
 
 .scheme h3 {
-    text-align: center;
+    text-align: left;
     color: #FF6600;
     letter-spacing: 1px;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
 .scheme p {
-    font-size: 15px;
+    font-size: 13px;
     color: #333333;
     font-weight: 100 !important;
 }
@@ -440,18 +440,53 @@ footer p{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #pst h2{
-        text-align: center;
-    }
+    text-align: center;
+}
+#pst h3{
+    border-bottom:2px solid #edb542 ;
+    margin: 2px 15px;
+}
+.scheme{
+    border-radius: 6px;
+}
+#pst p{
+    padding: 5px 15px;
+}
+#pst .scheme{
+    padding: 0px;
+}
+#pst .scheme img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius:4px 4px 0px 0px;
+    margin-bottom: 15px;
+}
+.scheme-grid .scheme{
+    padding-bottom: 60px;
+}
 @media (max-width: 768px) {
     .menu-toggle { 
         display: block;
     }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5px;
+    }
 
+
+    .scheme-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        padding: 20px 0px;
+    }
     .nav-list {
         display: none;
         flex-direction: column;
         position: absolute; 
-        top: 115px; 
+        top: 74px; 
         left: 100px;
         width: 100%; 
         background-color: #fff; 
@@ -557,6 +592,7 @@ footer p{
         padding: 20px 0;
         text-align: center;
     }
+    
     .carousel-inner .carousel-item img {
     max-width: 100%;
     height: auto;
@@ -651,6 +687,62 @@ footer p{
     justify-content: right;
 
 }
+.scheme-text-container {
+    position: relative;
+}
+.scheme-text {
+  overflow: hidden;
+  max-height: 100px; 
+  transition: max-height 0.3s ease-out;
+}
+
+.scheme-text.expanded {
+    max-height: none;
+}
+.read-more-btn {
+    background-color: transparent;
+    background-color: #edb542;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    bottom: -50px;
+    padding: 5px 15px;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+.read-more-btn:hover{
+  background-color: #FF6600; 
+}
+.scheme-text-container {
+    position: relative;
+}
+.current-scheme-text {
+  overflow: hidden;
+  max-height: 100px;
+  transition: max-height 0.3s ease-out;
+}
+
+.current-scheme-text.expanded {
+    max-height: none;
+}
+.current-read-more-btn {
+    background-color: transparent;
+    background-color: #edb542;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    bottom: -50px;
+    padding: 5px 15px;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+.current-read-more-btn:hover{
+  background-color: #FF6600; 
+}
 </style>
 <body>
     <nav>
@@ -676,7 +768,7 @@ footer p{
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#schemesdetails" class="nav-link">Schemes Details</a></li>
-                <li><a href="#pst" class="nav-link">Pst</a></li>
+                <li><a href="#pst" class="nav-link">District Governance</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -715,7 +807,7 @@ footer p{
         </section>
         <section id="about">
                 <div class="container">
-                    <h2 data-aos="fade-up">ABOUT</h2>
+                    <h2 data-aos="fade-up">WELCOME DISTRICT V201 A</h2>
                     <svg height="20" viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
                         <!-- Left line -->
                         <line x1="0" y1="15" x2="100" y2="15" stroke="#D4A647" stroke-width="2"/>
@@ -736,14 +828,11 @@ footer p{
                       
                       
                     <div class="about-content">
-                        <div class="about-image" data-aos="fade-right" data-aos-duration="1000"
-                        data-aos-delay="200">
-                            <img src="images/carousel-4.jpg" alt="Teacher and Student">
-                        </div>
+                        
                         <div class="about-text" data-aos="fade-left" data-aos-duration="1000"
                         data-aos-delay="200">
                        
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
+                            <p> A need was strongly felt to bring all Vysya Community to a common platform and to enable them to exchange their ideas and views and also to felicitate Arya Vysyas in those days who were qualified as IAS & as Doctor, Engineer & Advocates as well as those who visited Foreign Countries. With these modest aims and objectives the FIRST VASAVI CLUB was started in the year 1961 on 1st October with Eleven members at Hyderabad by Late Sri Kalvakuntla Chandrasena Gupta (K.C.Gupta), Freedom Fighter who could be regarded as not only the Founder but also as the "Father of Vasavi Movement"</p>
                        
                         </div>
                     </div>
@@ -755,7 +844,7 @@ footer p{
             
         </section>
     
-        <section id="schemesdetails" class="bg-light"> 
+        <section id="schemesdetails" class="bg-light">
             <div class="container">
                 <h2 data-aos="fade-up">Schemes Details</h2>
                 <svg height="20" viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
@@ -776,34 +865,64 @@ footer p{
                   </svg>
                 <div class="scheme-grid">
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="200">
-                        <h3>TITLE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
-                        
+                         data-aos-delay="200">
+                        <h3>KC Gupta Fellow (KCGF) – Corpus Fund</h3>
+                        <div class="scheme-text-container">
+                          <p class="current-scheme-text">KCGF – is a corpus fund created with specific objective of meeting educational need of poor students by way of financial assistance, distribution of notebooks, helping in any other mode to the poor students of the society in their educational need through the program called VasaviSaraswathiPadhakam. Also during the time of natural calamities, special assistance will be provided from this fund to the deserved.
+        
+                            The contribution for this fund will be received from any member of Vasavi Clubs International who is willing to contribute Rs.2500/- a fixed sum. All such contributions received with a specific direction, will be deposited in a specific fixed deposit and the interest from specific deposits will be used for the objectives of KCGF Fund.</p>
+                          <button class="current-read-more-btn">Read More</button>
+                        </div>
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="200">
-                        <h3>TITLE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
-                       
+                         data-aos-delay="200">
+                        <h3>Vasavi Kutumba Suraksha Padhakam</h3>
+                        <div class="scheme-text-container">
+                          <p class="current-scheme-text">VKSP - VasaviKutumbaSurakshaPadhakam is a benevolent fund for the members of Vasavi Clubs International. Any Vasavi Club member from any Vasavi Club in good standing is eligible to join this fund.
+        
+                            Any member who intends to join this fund has to remit a non refundable amount of Rs.3000/- to this fund out of which Rs.1000/- is towards Admission Fee which will be deposited permanently under FDs in the bank and the interest earned on such FDs will be utilized for administration purpose only, without disturbing the FDs at any time.
+                            
+                            The other Rs.2000/- is towards contingency liability of the member. If any member in this fund demises, an intimation by way of SMS will be given to all the remaining members and an amount of Rs.100/- for natural demise or Rs.200/- for accidental demise will be deducted from the contingency liability amount of each member in VKSP Normal and the deducting amount gets doubled in VKSP Senior. This collected amount will be provided as welfare assistance to the family members of the demised member. Any member in VKSP is eligible for benefits only after 2 years from the date of joining in VKSP Normal and only after 1 year from the date of joining in VKSP Senior.</p>
+                            <button class="current-read-more-btn">Read More</button>
+                        </div>
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="200">
-                        <h3>TITLE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
-                        
+                         data-aos-delay="200">
+                        <h3>Vasavi Saraswathi Padhakam</h3>
+                        <div class="scheme-text-container">
+                         <p class="current-scheme-text">The KCGF contribution amounts are being deposited permanently under FDs in Banks from the day one and only the interest earned on FDs will be utilised during the time of Natural Calamities and to serve the student community under the banner VasaviSaraswathiPadhakam. Under VasaviSaraswathiPadhakam, educational assistance is being provided to the deserving students through our member clubs in good standing. In addition, notebooks and dictionaries are also being distributed to poor students. Educational assistance will be provided to most deserving individual students on merits of each case.This assistance will be provided through our member clubs in good standing.</p>
+                           <button class="current-read-more-btn">Read More</button>
+                        </div>
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="200">
-                        <h3>TITLE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
-                       
+                         data-aos-delay="200">
+                        <h3>Vasavi Self Employment Scheme</h3>
+                        <div class="scheme-text-container">
+                           <p class="current-scheme-text">Self Employment Scheme was introduced in the year 2004-05 to Provide Self Employment to Economically backward families with Rs.20,000/- as Interest free loans to start Business/to improve their existing business. The above loans are Provided with the Financial help of GMR Varalakshmi Foundation; Vankadara Vasudeva Rao, Ratnakumari, Dharmika, Nidhi, Crane Foundation, Sidda Surya RrakashRao foundation & Kallepalli Chalapathi Rao, Swayam Samvruddhi Scheme.In addition to this Vasaviclubs are extending Self Employment by providing sewing Machines, wet Grinders & Financial assistance to the needy. From 2020, the loan amount of Rs.20,000/- has been increased to Rs.25,000/-.
+        
+                            Clubs can apply for Self Employment Scheme in Form No. 1019 along with photo and ID Proof of applicant. The Club President, Secretary, Treasurer & Project Chairman should stand as guarantors for the loanees. The beneficiaries should submit self cheques along with Application Itself are to be recommended by Governor, taking into consideration of the Service Activities / Performance of the respective Clubs. Cheques will be sent in the name of beneficiaries through clubs.</p>
+                           <button class="current-read-more-btn">Read More</button>
+                        </div>
                     </div>
-                    <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up"data-aos-duration="1000"
-                    data-aos-delay="200">
-                        <h3>TITLE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia orci non purus fermentum, vel facilisis ipsum posuere. Praesent vitae urna at justo bibendum hendrerit. Suspendisse potenti.</p>
-                        
+                    <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
+                         data-aos-delay="200">
+                        <h3>Sreyobhilashi Scheme</h3>
+                        <div class="scheme-text-container">
+                         <p class="current-scheme-text">Considering the requests from Vasavians, receiving donations to provide Self Employment Loans to economically backward families Sreyobhilashi Scheme was introduced in the year 2019 to Provide Self Employment to Economically backward families with Rs.20,000/- as Interest free loans to start Business/to improve their existing business. 463 Sreyobhilashi contributions were received in 2019.</p>
+                           <button class="current-read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                    <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
+                         data-aos-delay="200">
+                        <h3>VASAVI KUTUMBA SURAKSHA PADHAKAM (Sr.)</h3>
+                        <div class="scheme-text-container">
+                            <p class="current-scheme-text">VKSP - VasaviKutumbaSurakshaPadhakam is a benevolent fund for the members of Vasavi Clubs International. Any Vasavi Club member from any Vasavi Club in good standing is eligible to join this fund.
+        
+                                Any member who intends to join this fund has to remit a non refundable amount of Rs.3000/- to this fund out of which Rs.1000/- is towards Admission Fee which will be deposited permanently under FDs in the bank and the interest earned on such FDs will be utilized for administration purpose only, without disturbing the FDs at any time.
+                                
+                                The other Rs.2000/- is towards contingency liability of the member. If any member in this fund demises, an intimation by way of SMS will be given to all the remaining members and an amount of Rs.100/- for natural demise or Rs.200/- for accidental demise will be deducted from the contingency liability amount of each member in VKSP Normal and the deducting amount gets doubled in VKSP Senior. This collected amount will be provided as welfare assistance to the family members of the demised member. Any member in VKSP is eligible for benefits only after 2 years from the date of joining in VKSP Normal and only after 1 year from the date of joining in VKSP Senior.</p>
+                                <button class="current-read-more-btn">Read More</button>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -812,7 +931,7 @@ footer p{
         <section id="pst" class="bg-light"> 
             <div class="container">
                 <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
-                    <h2 data-aos="fade-up">PST Details</h2>
+                    <h2 data-aos="fade-up">DISTRICT GOVERNANCE</h2>
                     <svg  height="20" viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
                         <!-- Left line -->
                         <line x1="0" y1="15" x2="100" y2="15" stroke="#D4A647" stroke-width="2"/>
@@ -833,23 +952,44 @@ footer p{
                 <div class="scheme-grid">
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">
-                        <img src="images/carousel-4.jpg" alt="Sainik School">
-                        <h3>Lorem ipsum</h3>
-                        <p>Lorem ipsum</p>
+                        <img src="images/president.jpg" alt="president">
+                        <h3>Vn. Diamond*KCGF<br> Erukulla Ramakrishna</h3>
+                        <p>International president</p>
                         
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">
-                        <img src="images/carousel-4.jpg" alt="Military School">
-                        <h3>Lorem ipsum</h3>
-                        <p>Lorem ipsum</p>
+                        <img src="images/district governor.png" alt="District Governor">
+                        <h3>Vn. Golden*KCGF Sreyobhilashi<br> Thammana Amarnath</h3>
+                        <p>District Governor</p>
                        
                     </div>
                     <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">
-                        <img src="images/carousel-4.jpg" alt="Navodaya">
-                        <h3>Lorem ipsum</h3>
-                        <p>Lorem ipsum</p>
+                        <img src="images/Screenshot 2024-12-31 at 6.25.40 PM.png" alt="vc">
+                        <h3>Vn.Sevasankalpa KCGF<br>Sidda Surya Prakasha Rao</h3>
+                        <p>International Executive Vice President</p>
+                        
+                    </div>
+                    <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200">
+                        <img src="images/Screenshot 2024-12-31 at 6.25.48 PM.png" alt="is">
+                        <h3>Vn.Vidayasankalpa KCGF<br>Garlapati Srinivasulu</h3>
+                        <p>International Secretary</p>
+                        
+                    </div>
+                    <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200">
+                        <img src="images/Screenshot 2024-12-31 at 6.25.55 PM.png" alt="is">
+                        <h3>Vn.Vidayasankalpa KCGF<br>Boda Sai Surya Prakash</h3>
+                        <p>International Secretary</p>
+                        
+                    </div>
+                    <div class="scheme animate__animated animate__zoomIn" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200">
+                        <img src="images/Screenshot 2024-12-31 at 6.26.03 PM.png" alt="Navodaya">
+                        <h3>Vn.Vidayasankalpa KCGF<br>Sujatha Ramesh Babu</h3>
+                        <p>International Secretary</p>
                         
                     </div>
                     
@@ -865,11 +1005,10 @@ footer p{
                         <ul>
                             <h3>Get in Touch</h3>
                             <li><i class="fas fa-map-marker-alt"></i> 
-                                Location
-                            <Address></Address>
+                                Ramatalkies Vegitable Market Road, Srinagar, Visakhapatnam - 530016
                             </li>
-                            <li><i class="fas fa-phone"></i> Mobile Number</li>
-                            <li><i class="fas fa-envelope"></i> Email</li> 
+                            <li><i class="fas fa-phone"></i> 9246562789</li>
+                            <li><i class="fas fa-envelope"></i> dist.v201a.2025@gmail.com</li> 
                         </ul>
                         
                     </div>
@@ -915,6 +1054,27 @@ menuToggle.addEventListener('click', () => {
 <script>
   AOS.init({
     once:false
-  }); 
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+    const schemeGrids = document.querySelectorAll('.scheme-grid');
+
+    schemeGrids.forEach(grid => {
+        grid.addEventListener('click', function (event) {
+          if(event.target.classList.contains("current-read-more-btn")){
+            const button = event.target;
+            const card = button.closest('.scheme');
+            const textElement = card.querySelector('.current-scheme-text');
+
+              textElement.classList.toggle('expanded');
+
+              if (textElement.classList.contains('expanded')) {
+                  button.textContent = 'Read Less';
+              } else {
+                  button.textContent = 'Read More';
+              }
+            }
+        });
+    });
+});
 </script>
 </html>
